@@ -11,8 +11,8 @@ class UserPaymentFactory extends Factory
 
     public function definition(): array
     {
-    	return [
-    	    //
-    	];
+        return [
+            'amount' => $this->faker->sentence
+        ];
     }
 }
