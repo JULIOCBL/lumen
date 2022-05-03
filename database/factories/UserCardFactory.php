@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\UserCard;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class UserCardFactory extends Factory
 {
-    protected $model = User::class;
+    protected $model = UserCard::class;
 
     public function definition(): array
     {
