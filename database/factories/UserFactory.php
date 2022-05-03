@@ -29,8 +29,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence,
-            'body' => $this->faker->paragraph,
+            'amount' => $this->faker->sentence
         ];
     }
 }
