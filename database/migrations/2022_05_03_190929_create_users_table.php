@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserPaymentsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUserPaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_payments', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->decimal('amount', 10, 2);
-          /*   $table->foreign('id')->references('user_id')->on('users'); */
+            $table->string('name');
+            $table->string('password');
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateUserPaymentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_payments');
+        Schema::dropIfExists('users');
     }
 }
