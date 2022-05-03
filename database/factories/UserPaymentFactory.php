@@ -12,7 +12,7 @@ class UserPaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            'amount' => $this->faker->sentence
+            'amount' => $this->faker->unique()->randomFloat(2,1,20)
         ];
     }
 }

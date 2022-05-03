@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use PHPUnit\TextUI\XmlConfiguration\Group;
+use App\Http\Controllers\UserPaymentController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -19,3 +21,13 @@ $router->get('/', function () use ($router) {
 $router->get('/key', function() {
     return \Illuminate\Support\Str::random(32);
 });
+
+/* $router->group(['prefix' => 'api'], function () use ($router){
+    $router->get('/user_payments', 'UserPaymentController@index');
+}); */
+
+/* $router->get('/user_payments', function () {
+    return 'Hello World';
+}); */
+
+$router->get('/user_payments', 'UserPaymentController@prueba');
