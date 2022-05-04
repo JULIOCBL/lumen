@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrganizationPaymentsTable extends Migration
+class CreateRatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateOrganizationPaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('organization_payments', function (Blueprint $table) {
+        Schema::create('rates', function (Blueprint $table) {
             $table->id();
-            $table->decimal('amount',10,2);
-            $table->unsignedBigInteger('organization_id')->nullable()->unsigned();
-            $table->foreign('organization_id')->references('id')->on('organizations')->nullable();
+            $table->unsignedBigInteger('route_id');
+            $table->foreign('route_id')->references('id')->on('routes');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateOrganizationPaymentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organization_payments');
+        Schema::dropIfExists('rates');
     }
 }
